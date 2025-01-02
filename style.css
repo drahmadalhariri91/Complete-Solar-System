@@ -1,0 +1,203 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: system-ui, -apple-system, sans-serif;
+            cursor: grab;
+
+        }
+        
+        .space {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at center, #000033 0%, #000 70%);
+            transform-style: preserve-3d;
+        }
+
+        .info-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 14px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            max-width: 300px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        .sun {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle at center,
+                #fff 0%,
+                #fff7e6 20%,
+                #ffdb4d 40%,
+                #ff9933 60%,
+                #ff4d00 80%,
+                #ff1a1a 100%);
+            box-shadow: 
+                0 0 60px #ff4d00,
+                0 0 100px #ff9933;
+            z-index: 10;
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .planet-system {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+        }
+
+        .celestial-body {
+            position: absolute;
+            border-radius: 50%;
+            transform-origin: center;
+        }
+
+        #mercury {
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(45deg, #8c8c8c, #b3b3b3);
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
+        #venus {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(45deg, #e6b800, #ffcc00);
+            box-shadow: 0 0 15px rgba(255,204,0,0.3);
+        }
+
+        #earth {
+            width: 39px;
+            height: 39px;
+            background: radial-gradient(circle at 30% 30%,
+                #4d94ff 0%,
+                #0047b3 60%,
+                #00264d 100%);
+            box-shadow: 0 0 20px rgba(77,148,255,0.3);
+        }
+
+        .moon {
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle at 30% 30%,
+                #fff 0%,
+                #f2f2f2 20%,
+                #cccccc 40%,
+                #999999 60%,
+                #666666 100%);
+            box-shadow: 0 0 8px rgba(255,255,255,0.2);
+        }
+
+        #mars {
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(45deg, #cc3300, #ff4d4d);
+            box-shadow: 0 0 15px rgba(255,77,77,0.3);
+        }
+
+        #jupiter {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #cc9966, #ffcc99);
+            box-shadow: 0 0 25px rgba(255,204,153,0.3);
+        }
+
+        .label {
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            text-shadow: 0 0 5px rgba(0,0,0,0.8);
+           
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s linear;
+            transform-origin: center center;
+            pointer-events: none;
+        }
+
+        .galactic-background {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle at center,
+                rgba(0, 0, 51, 0.8) 0%,
+                rgba(0, 0, 25, 0.6) 40%,
+                rgba(0, 0, 0, 0.4) 70%);
+            transform-origin: center center;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .info-section {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .controls input[type="range"] {
+            width: 150px;
+            margin: 5px 0;
+        }
+
+        .controls label {
+            display: block;
+            margin-top: 10px;
+
+        }
